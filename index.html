@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness M</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: #f8fafc;
+      color: #111827;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+    .logo {
+      height: 50px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .slider {
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .map {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    footer {
+      background: #1f2937;
+      color: #f3f4f6;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .contact-btns {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .contact-btns a {
+      background: #3b82f6;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-btns a:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/logo.png" alt="Fitness M" class="logo"/>
+  <nav>
+    <ul>
+      <li><a href="#facility">시설</a></li>
+      <li><a href="#location">오시는 길</a></li>
+      <li><a href="tel:01030397668">문의</a></li>
+      <li><a href="http://pf.kakao.com/_Jxhxgrn" target="_blank">카카오톡 상담</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>피트니스M</h1>
+  <p>경기도 수원시 영통구 이의동1316-2 | 010-3039-7668</p>
+  <div class="contact-btns">
+    <a href="tel:01030397668">전화 문의</a>
+    <a href="http://pf.kakao.com/_Jxhxgrn" target="_blank">카카오톡 상담</a>
+  </div>
+</section>
+
+<section class="slider">
+  <div class="slides" id="slides">
+    <img src="images/gym1.jpg" alt="gym1"/>
+    <img src="images/gym2.jpg" alt="gym2"/>
+    <img src="images/gym3.jpg" alt="gym3"/>
+  </div>
+</section>
+
+<section class="section" id="facility">
+  <h2>최신 시설 완비</h2>
+  <p>첨단 운동기구와 쾌적한 공간에서 최고의 퍼포먼스를 경험하세요.</p>
+</section>
+
+<section class="section" id="location">
+  <h2>오시는 길</h2>
+  <iframe class="map" src="https://map.kakao.com/?q=경기도 수원시 영통구 이의동1316-2"></iframe>
+</section>
+
+<footer>
+  <p>&copy; 2025 Fitness M. All rights reserved.</p>
+  <p>사업자등록번호: 510-15-69979 | 이메일: yh04023@naver.com | 전화: 010-3039-7668</p>
+</footer>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementById("slides");
+  const totalSlides = slides.children.length;
+
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }, 3000);
+</script>
+
+</body>
+</html>
